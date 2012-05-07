@@ -1,0 +1,17 @@
+<h1>Enter new line information</h1>
+
+  <% if flash[:alert].present? %>
+  <p><%= flash[:alert] %></p>
+  <% end %>
+
+  <% if @line.errors.any? %>
+  <ul>  
+    <% @line.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+      <% end %>
+  </ul>
+
+  <% end %>
+  
+  
+<%= render "form" %>

@@ -1,0 +1,22 @@
+<h1>CTA Lines</h1>
+<p>
+<% if flash[:notice].present? %>
+<%= flash[:notice] %>
+<% end  %>
+</p>
+
+<%= link_to "Add new", "http://localhost:3000/lines/new" %>
+
+<ul>
+  <% @lines.each do |line| %>
+    <li>
+    <%= link_to line.name, line_url(line.id) %>
+    | <%= link_to "Delete", line_url(line.id),
+    :method => :delete,
+    :confirm => "Are you sure?"
+     %>
+     </li>
+  <% end %>
+  
+  
+</ul>

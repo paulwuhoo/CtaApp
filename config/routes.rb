@@ -1,5 +1,7 @@
 CtaApp::Application.routes.draw do
  
+  resources :landmarks
+
  get "/lines", :controller => "lines", :action => "index", :as => :lines
  post "lines", :controller => "lines", :action => "create"
  

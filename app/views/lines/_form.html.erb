@@ -8,5 +8,10 @@
 <%= form.label :frequency, "Frequency of Train Line: " %>  
 <%= form.text_field :frequency %>
 </div>
+<div class = "field">
+  <%= form.label :landmark_id, "Landmark:" %>
+  <%= form.collection_select :landmark_id, Landmark.all, :id, :name %>
+</div>
+
 <%= form.submit "Save" %>
 <% end %>

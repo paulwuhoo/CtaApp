@@ -1,9 +1,13 @@
 class Line < ActiveRecord::Base
-  attr_accessible :frequency, :name
+  attr_accessible :frequency, :name, :landmark_id
+  
+  belongs_to :landmark
   
   validates_presence_of :name
   validates_presence_of :frequency
   validates :frequency, :numericality => true
+  
+
   
   # def is_data_ok?
   #   if frequency.present? && name.present?
